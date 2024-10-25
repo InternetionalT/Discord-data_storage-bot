@@ -10,7 +10,7 @@ data_storage = {}
 # Event: The bot is ready and synchronizes the slash commands
 @bot.event
 async def on_ready():
-    print(f'Bot {bot.user} ist bereit!')
+    print(f'Bot {bot.user} is ready!')
     await bot.tree.sync()
 # /import command to save a name and associated data
 @bot.tree.command(name="import")
@@ -20,16 +20,16 @@ async def import_data(interaction: discord.Interaction, name: str, data: str):
     """
     # Save data under the entered name
     data_storage[name] = data
-    await interaction.response.send_message(f'Daten unter dem Namen "{name}" gespeichert!')
+    await interaction.response.send_message(f'Data saved under the name "{name}"!')
 # /list command to display all stored names
 @bot.tree.command(name="list")
 async def list_data(interaction: discord.Interaction):
     """
-    Zeigt alle gespeicherten Namen an.
+    Displays all saved names.
     """
     if data_storage:
         name_list = "\n".join(data_storage.keys())
-        await interaction.response.send_message(f'Gespeicherte Namen:\n{name_list}')
+        await interaction.response.send_message(f'Stored names:\n{name_list}')
     else:
         await interaction.response.send_message('No data available!')
 # /export command to export the stored data for a specific name
@@ -39,7 +39,7 @@ async def export_data(interaction: discord.Interaction, name: str):
     Returns the data for the entered name.
     """
     if name in data_storage:
-        await interaction.response.send_message(f'Daten für "{name}": {data_storage[name]}')
+        await interaction.response.send_message(f'Datas for "{name}": {data_storage[name]}')
     else:
         await interaction.response.send_message(f'No datas for "{name}" found!')
 # /delete command to delete data under a specific name
