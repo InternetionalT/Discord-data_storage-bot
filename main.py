@@ -60,7 +60,7 @@ async def help_command(interaction: discord.Interaction):
     Shows an overview of the available commands.
     """
     help_text = """
-    **Verfügbare Befehle:**
+    **Available commands::**
     `/import <name> <data>` - Stores data under a specific name.
     `/list` - Shows a list of all saved names.
     `/export <name>` - Outputs the stored data for the specified name.
