@@ -69,4 +69,4 @@ async def help_command(interaction: discord.Interaction):
     """
     await interaction.response.send_message(help_text)
 # Starts the bot with the specified token
-bot.run(" Bot-token")
+bot.run("bot-token")
